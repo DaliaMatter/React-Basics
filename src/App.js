@@ -2,6 +2,7 @@
 // import './App.css';
 import Hello from "./components/hello";
 import Welcome from "./components/Welcome";
+import List from './components/list'
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
           hello from app
           <Welcome name="Dalia"> Mohamed Shawky Matter </Welcome>
           <Hello name="Dalia"> Mohamed Shawky Matter </Hello>
+          <List/>
       </div>
   );
 }
