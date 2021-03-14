@@ -23,6 +23,17 @@ class Hello extends Component {
     increment() {
         this.setState({ age: this.state.user.age++ });
     }
+    UpdateName = (e) => {
+        console.log(e.target.value);
+        const newFirstName = e.target.value;
+        this.setState({
+            user: {
+                ...this.state.user,
+                first_name: newFirstName
+                // last_name: this.state.user.last_name
+            }
+        });
+    } 
     render(props) {
         return (
             <div>
@@ -42,13 +53,20 @@ class Hello extends Component {
                 >
                     Increment
                 </button>
-                <button onClick={this.decrement}>Decrement</button> 
+                <button onClick={this.decrement}>Decrement</button>
                 <button onClick={this.increment1.bind(this)}>
                     Increment with fun,bind
                 </button>
                 <button onClick={this.increment}>
                     Increment with Fun,const
                 </button>
+                <br></br>
+                <h3>Change First Name:</h3>
+                <input
+                    type="text"
+                    value={this.state.user.first_name}
+                    onChange={this.UpdateName}
+                ></input>
             </div>
         );
     }
